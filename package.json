@@ -1,27 +1,36 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.11.3",
-    "@mui/icons-material": "^5.11.9",
-    "@next/font": "13.1.6",
-    "@types/node": "18.13.0",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
-    "eslint": "8.34.0",
-    "eslint-config-next": "13.1.6",
-    "next": "13.1.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "styled-components": "^5.3.6",
-    "typescript": "4.9.5"
-  }
+    "name": "my-app",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "format": "prettier --check --ignore-path .gitignore .",
+        "format:fix": "prettier --write --ignore-path .gitignore ."
+    },
+    "dependencies": {
+        "@material-ui/core": "^4.12.4",
+        "@material-ui/icons": "^4.11.3",
+        "@mui/icons-material": "^5.11.9",
+        "@next/font": "13.1.6",
+        "@types/node": "18.13.0",
+        "@types/react": "18.0.28",
+        "@types/react-dom": "18.0.11",
+        "eslint": "8.34.0",
+        "eslint-config-next": "13.1.6",
+        "next": "13.1.6",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "styled-components": "^5.3.6",
+        "typescript": "4.9.5"
+    },
+    "devDependencies": {
+        "sass": "^1.58.2",
+        "eslint": "7.32.0",
+        "eslint-config-next": "11.1.2",
+        "eslint-plugin-react": "^7.30.1",
+        "prettier": "^2.7.1"
+    }
 }

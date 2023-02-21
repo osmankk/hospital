@@ -4,13 +4,9 @@ const Navbar = () => {
         <div id="mainmenu">
             <nav>
                 <div className="logo">
-                    {" "}
-                    <Image src={"/images/logo.png"} width={100} height={100} alt={"Logo"} />
+                    <Image src={"/images/logo.png"} width={80} alt={"Logo"} height={80}/>
                 </div>
 
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
             </nav>
         </div>
     );

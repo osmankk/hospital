@@ -1,24 +1,70 @@
+$fontMainPath: '/fonts/';
+$fontFormat: 'woff2';
+// English Font
+$enRegular: null;
+$enMedium: null;
+$enBold: null;
+$ُenUniCode: null;
+// Arabic Font
+$arRegular: messiri-regular;
+$arMedium: messiri-medium;
+$arBold: messiri-bold;
+$arUniCode: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+
+// Function
+$font2: 'regular' $enRegular $ُenUniCode;
+$font3: 'medium' $enMedium $ُenUniCode;
+$font4: 'bold' $enBold $ُenUniCode;
+$font6: 'regular' $arRegular $arUniCode;
+$font7: 'medium' $arMedium $arUniCode;
+$font8: 'bold' $arBold $arUniCode;
+$fonts: $font2, $font3, $font4, $font6, $font7, $font8;
+
+@each $font, $fontSrc, $uniCode in $fonts {
+    @if $fontSrc {
+        @font-face {
+            font-family: $font;
+            font-style: normal;
+            @if ($font == 'light') or ($font == 'light2') {
+                font-weight: 300;
+            } @else if ($font == 'regular') or ($font == 'regular2') {
+                font-weight: 400;
+            } @else if ($font == 'medium') or ($font == 'medium2') {
+                font-weight: 600;
+            } @else if ($font == 'bold') or ($font == 'bold2') {
+                font-weight: 800;
+            }
+            font-display: swap;
+            src: local('#{$fontSrc}'), url(#{$fontMainPath}#{$fontSrc}.#{$fontFormat}) format('#{$fontFormat}');
+            @if $uniCode {
+                unicode-range: $uniCode;
+            }
+        }
+    }
+}
+
 body {
     color: white;
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(15, 105, 169, 1) 35%, rgba(0, 212, 255, 1) 100%);
     overflow-x: hidden;
     box-sizing: border-box;
+    font-family: 'messiri-regular';
+   
 }
-.InstagramIcon{
+.InstagramIcon {
     border: 1px solid;
     border-radius: 10px;
-    margin: 10px
+    margin: 10px;
 }
 
-.socialMedia{
-    width:100%;
+.socialMedia {
+    width: 100%;
     display: flex;
     justify-content: center;
-
 }
 
-.logo img{
+.logo img {
     border: 1px solid;
     border-radius: 50%;
 }
@@ -32,7 +78,7 @@ body {
     margin-bottom: 35px;
 }
 
-.app-download-content p{
+.app-download-content p {
     background-color: #ac2516;
     padding: 20px;
     border: 1px solid red;
@@ -60,7 +106,6 @@ body {
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
-        
     }
 }
 
@@ -74,7 +119,7 @@ body {
     .download-icon img {
         margin: 10px;
     }
-    .download-icon{
+    .download-icon {
         margin: 40px 0 40px 0;
     }
 }
@@ -89,8 +134,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
 }
-footer p{
-    color:white;
+footer p {
+    color: white;
     font-size: 21px;
-    
 }
